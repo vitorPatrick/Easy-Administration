@@ -49,6 +49,10 @@ public class Advogado {
     public void setNome(String Nome) {
         this.Nome = Nome;
     }
+    
+    public void setId_Advogado(int Id_Advogado){
+        this.Id_Advogado = Id_Advogado;
+    }
 
     public void setEspecialidade(String Especialidade) {
         this.Especialidade = Especialidade;
