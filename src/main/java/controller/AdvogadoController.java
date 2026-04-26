@@ -46,7 +46,7 @@ public class AdvogadoController {
     
     //Atualizar advogado
     public boolean atualizarAdvogado(int id, Advogado novo, String senha){
-        //percorre toda a lista de Advogados buscando um advigado com o Id recebido;
+        //percorre toda a lista de Advogados buscando um advigado com o Id recebidso;
         for(int i = 0; i < advogados.size(); i++){
             //Valida o ID e senha antes de atualizar os dados de um Advogado;
             if(advogados.get(i).getId_Advogado() == id && advogados.get(i).getSenha() == senha){

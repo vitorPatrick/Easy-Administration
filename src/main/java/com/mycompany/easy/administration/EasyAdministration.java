@@ -2,8 +2,10 @@ package com.mycompany.easy.administration;
 
 import com.mycompany.easy.administration.model.Advogado;
 import com.mycompany.easy.administration.model.Especialidade;
+import com.mycompany.easy.administration.model.Secretaria;
 import controller.AdvogadoController;
 import controller.EspecialidadeController;
+import controller.SecretariaController;
 
 public class EasyAdministration {
 
@@ -21,5 +23,11 @@ public class EasyAdministration {
         
         Econtroller.cadastrarEspecialidade(e);
         Econtroller.buscaEspecialidadePorId(1);
+        
+        SecretariaController Scontroller = new SecretariaController();
+        Secretaria s = new Secretaria("Marta","0918237","Marta@gmail.com","12341");
+        
+        Scontroller.adicionarSecretaria(s);
+        Scontroller.buscaSecretariaPorId(1);
     }
 }
