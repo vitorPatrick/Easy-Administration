@@ -34,8 +34,10 @@ public class EasyAdministration {
         
         ClienteController Ccontroller = new ClienteController();
         Cliente c = new Cliente("Patrick","12341","Patrick@yahoo.com","12345");
+        Cliente c1 = new Cliente("PatrickS","12341","Patrick@yahoo.com","12345");
         
         Ccontroller.adicionarCliente(c);
-        Ccontroller.buscaClientePorId(1);
+        Ccontroller.adicionarCliente(c1);
+        Ccontroller.buscaClientePorId(2);
     }
 }

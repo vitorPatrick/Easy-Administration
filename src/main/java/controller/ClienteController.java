@@ -10,7 +10,7 @@ public class ClienteController {
     public void adicionarCliente(Cliente cliente){
         for(Cliente c : clientes){
             if(c.getCPF().equals(cliente.getCPF())){
-                throw new IllegalArgumentException("Já existe um cliente com esse CPF.");
+                throw new IllegalArgumentException("Ja existe um cliente com esse CPF.");
             }
         }
         clientes.add(cliente);

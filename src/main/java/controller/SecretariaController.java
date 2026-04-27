@@ -10,7 +10,7 @@ public class SecretariaController {
     public void adicionarSecretaria(Secretaria secretaria){
         for(Secretaria s : secretarias){
             if(s.getCPF().equals(secretaria.getCPF())){
-                throw new IllegalArgumentException("Já existe uma secretária com esse CPF.");
+                throw new IllegalArgumentException("Ja existe uma secretária com esse CPF.");
             }
         }
         secretarias.add(secretaria);
