@@ -1,25 +1,25 @@
 package controller;
 
 import com.mycompany.easy.administration.model.Secretaria;
+import com.mycompany.easy.administration.model.BancoDeDados; 
 import java.util.ArrayList;
 import java.util.List;
 
 public class SecretariaController {
-    private List<Secretaria> secretarias = new ArrayList<>();
     
     public void adicionarSecretaria(Secretaria secretaria){
-        for(Secretaria s : secretarias){
+        for(Secretaria s : BancoDeDados.secretarias){
             if(s.getCPF().equals(secretaria.getCPF())){
                 throw new IllegalArgumentException("Ja existe uma secretária com esse CPF.");
             }
         }
-        secretarias.add(secretaria);
-        secretaria.setId_Secretaria(secretarias.size());
+        BancoDeDados.secretarias.add(secretaria);
+        secretaria.setId_Secretaria(BancoDeDados.secretarias.size());
     }
     
-    //Consulta secretaria por ID
+    // consulta secretaria por ID
     public void buscaSecretariaPorId(int id){
-        for(Secretaria s : secretarias){
+        for(Secretaria s : BancoDeDados.secretarias){
             if(s.getId_Secretaria() == id){
                 System.out.println("Nome: " + s.getNome());
                 System.out.println("Id: " + s.getId_Secretaria());
@@ -27,11 +27,13 @@ public class SecretariaController {
             }
         }
     }
-    //Listar todas as secretarias
+    
+    // lista todas as secretarias
     public List<Secretaria> ListarTodasSecretarias(){
-        return new ArrayList<>(secretarias);
+        return new ArrayList<>(BancoDeDados.secretarias);
     }
+    
     public boolean removerSecretariaPorId(int id){
-        return secretarias.removeIf(s -> s.getId_Secretaria() == id);
+        return BancoDeDados.secretarias.removeIf(s -> s.getId_Secretaria() == id);
     }
 }
