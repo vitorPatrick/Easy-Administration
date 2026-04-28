@@ -57,7 +57,7 @@ public class TelaAdvogado extends JFrame {
             JOptionPane.showMessageDialog(this, "Você não possui contratos sob sua responsabilidade.");
         } else {
             sb.append("\nTotal de contratos: ").append(contagem);
-            JOptionPane.showMessageDialog(this, sb.toString());.
+            JOptionPane.showMessageDialog(this, sb.toString());
         }
     }
 }
