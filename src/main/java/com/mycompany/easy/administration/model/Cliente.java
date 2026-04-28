@@ -1,55 +1,23 @@
 package com.mycompany.easy.administration.model;
+
 public class Cliente {
-    private String Nome;
-    private int Id_Cliente;
-    private String CPF;
-    private String Email;
-    private String Senha;
-    
-    public Cliente(String Nome, String CPF, String Email, String Senha){
-        this.Nome = Nome;
-        this.CPF = CPF;
-        this.Email = Email;
-        this.Senha = Senha;
+    private String nome;
+    private int idCliente;
+    private String cpf;
+    private String email;
+    private String senha;
+
+    public Cliente(String nome, String cpf, String email, String senha) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.email = email;
+        this.senha = senha;
     }
 
-    public String getNome() {
-        return Nome;
-    }
-
-    public int getId_Cliente() {
-        return Id_Cliente;
-    }
-
-    public String getCPF() {
-        return CPF;
-    }
-
-    public String getEmail() {
-        return Email;
-    }
-
-    public String getSenha() {
-        return Senha;
-    }
-
-    public void setNome(String Nome) {
-        this.Nome = Nome;
-    }
-
-    public void setId_Cliente(int Id_Cliente) {
-        this.Id_Cliente = Id_Cliente;
-    }
-
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-    public void setSenha(String Senha) {
-        this.Senha = Senha;
-    }
+    public String getNome() { return nome; }
+    public int getIdCliente() { return idCliente; }
+    public void setIdCliente(int id) { this.idCliente = id; }
+    public String getCpf() { return cpf; }
+    public String getEmail() { return email; }
+    public String getSenha() { return senha; }
 }

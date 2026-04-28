@@ -1,76 +1,78 @@
 package com.mycompany.easy.administration.model;
+
 public class Advogado {
-    private String Nome;
-    private int Id_Advogado;
-    private String Especialidade;
-    private String NumeroOAB;
-    private String Telefone;
-    private String Email;
-    private String Senha;
-    
-    public Advogado(String Nome, String Especialidade,
-                    String NumeroOAB, String Telefone, String Email, String Senha){
-        this.Nome = Nome;
-        this.Especialidade = Especialidade;
-        this.NumeroOAB = NumeroOAB;
-        this.Telefone = Telefone;
-        this.Email = Email;
-        this.Senha = Senha;
+    private int idAdvogado;
+    private String nome;
+    private String especialidade;
+    private String numeroOAB;
+    private String telefone;
+    private String email;
+    private String senha;
+
+    // Construtor completo (compatível com a chamada no AppCLI)
+    public Advogado(String nome, String especialidade, String oab, String telefone, String email, String senha) {
+        this.nome = nome;
+        this.especialidade = especialidade;
+        this.numeroOAB = oab;
+        this.telefone = telefone;
+        this.email = email;
+        this.senha = senha;
+    }
+
+    // Getters e Setters
+    public int getIdAdvogado() {
+        return idAdvogado;
+    }
+
+    public void setIdAdvogado(int idAdvogado) {
+        this.idAdvogado = idAdvogado;
     }
 
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
-    public int getId_Advogado() {
-        return Id_Advogado;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String getEspecialidade() {
-        return Especialidade;
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
 
     public String getNumeroOAB() {
-        return NumeroOAB;
+        return numeroOAB;
+    }
+
+    public void setNumeroOAB(String numeroOAB) {
+        this.numeroOAB = numeroOAB;
     }
 
     public String getTelefone() {
-        return Telefone;
+        return telefone;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getSenha() {
-        return Senha;
+        return senha;
     }
 
-    public void setNome(String Nome) {
-        this.Nome = Nome;
-    }
-    
-    public void setId_Advogado(int Id_Advogado){
-        this.Id_Advogado = Id_Advogado;
-    }
-
-    public void setEspecialidade(String Especialidade) {
-        this.Especialidade = Especialidade;
-    }
-
-    public void setNumeroOAB(String NumeroOAB) {
-        this.NumeroOAB = NumeroOAB;
-    }
-
-    public void setTelefone(String Telefone) {
-        this.Telefone = Telefone;
-    }
-
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
-
-    public void setSenha(String Senha) {
-        this.Senha = Senha;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
