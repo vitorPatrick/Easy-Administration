@@ -44,26 +44,54 @@ public class App {
     }
     // menu da secretaria completo
     private static void menuSecretaria() {
-        while (true) {
-            System.out.println("\nMENU SECRETARIA");
-            System.out.println("1. Cadastrar Advogado\n2. Cadastrar Cliente\n3. Logout\n4. Sair");
-            String op = sc.nextLine();
-    // cadastramento de advogado
-            if (op.equals("1")) {
-                System.out.print("Nome: "); String nome = sc.nextLine();
-                new AdvogadoController().adicionarAdvogado(new Advogado(nome, "Geral", "000", "000", "adv@email.com", "123"));
-                System.out.println("Advogado cadastrado!");
-    // cadastramento de cliente
-            } else if (op.equals("2")) {
-                System.out.print("Nome: "); String nome = sc.nextLine();
-                new ClienteController().adicionarCliente(new Cliente(nome, "000", "cli@email.com", "123"));
-                System.out.println("Cliente cadastrado!");
-    // retorna para o menu
-            } else if (op.equals("3")) return;
-            // fecha o programa
-            else if (op.equals("4")) System.exit(0);
+    while (true) {
+        System.out.println("\nMENU SECRETARIA");
+        System.out.println("1. Cadastrar Advogado\n2. Cadastrar Cliente\n3. Listar Todos\n4. Logout\n5. Sair");
+        String op = sc.nextLine();
+    // todas as informações para cadastro
+        if (op.equals("1")) {
+            System.out.print("Nome: "); String nome = sc.nextLine();
+            System.out.print("Especialidade: "); String esp = sc.nextLine();
+            System.out.print("OAB: "); String oab = sc.nextLine();
+            System.out.print("Telefone: "); String tel = sc.nextLine();
+            System.out.print("Email: "); String email = sc.nextLine();
+            System.out.print("Senha: "); String senha = sc.nextLine();
+    // cadastra o advogado com as alterações exigidas 
+            Advogado novoAdv = new Advogado(nome, esp, oab, tel, email, senha);
+            novoAdv.setIdAdvogado(BancoDeDados.countAdv++);
+            new AdvogadoController().adicionarAdvogado(novoAdv);
+            System.out.println("Advogado cadastrado!");
+    // todas as informações exigidas para cadastro do cliente
+        } else if (op.equals("2")) {
+            System.out.print("Nome: "); String nome = sc.nextLine();
+            System.out.print("CPF: "); String cpf = sc.nextLine();
+            System.out.print("Email: "); String email = sc.nextLine();
+            System.out.print("Senha: "); String senha = sc.nextLine();
+    // cadastro do novo cliente a partir das informações
+            Cliente novoCli = new Cliente(nome, cpf, email, senha);
+            novoCli.setIdCliente(BancoDeDados.countCli++);
+            new ClienteController().adicionarCliente(novoCli);
+            System.out.println("Cliente cadastrado!");
+    // mostra todos na lista do banco de dados
+        } else if (op.equals("3")) {
+            System.out.println("\n--- LISTA DE ADVOGADOS ---");
+            for (Advogado a : BancoDeDados.advogados) {
+                System.out.println("ID: " + a.getIdAdvogado() + " | Nome: " + a.getNome() + " | OAB: " + a.getNumeroOAB());
+            }
+
+            System.out.println("\n--- LISTA DE CLIENTES ---");
+            for (Cliente c : BancoDeDados.clientes) {
+                System.out.println("ID: " + c.getIdCliente() + " | Nome: " + c.getNome() + " | Email: " + c.getEmail());
+            }
+    // volta para o menu inicial
+        } else if (op.equals("4")) {
+            return;
+    // fecha o ciclo
+        } else if (op.equals("5")) {
+            System.exit(0);
         }
     }
+}
 
     private static void menuAdvogado(Advogado adv) {
         while (true) {
