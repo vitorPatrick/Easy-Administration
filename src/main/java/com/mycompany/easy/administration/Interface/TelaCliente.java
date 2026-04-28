@@ -19,17 +19,17 @@ public class TelaCliente extends JFrame {
         
         add(new JLabel("Olá, " + c.getNome(), SwingConstants.CENTER));
         
-        // 1. botão que consulta contratos
+        //  botão que consulta contratos
         JButton btnContratos = new JButton("Consultar Meus Contratos");
         btnContratos.addActionListener(e -> listarMeusContratos(c.getId_Cliente()));
         add(btnContratos);
         
-        // 2. botão que altera dados
+        // botão que altera dados
         JButton btnAlterar = new JButton("Alterar Meus Dados");
         btnAlterar.addActionListener(e -> JOptionPane.showMessageDialog(this, "Funcionalidade em desenvolvimento!"));
         add(btnAlterar);
         
-        // 3. botão de sair
+        // botão de sair
         JButton btnSair = new JButton("Sair");
         btnSair.addActionListener(e -> System.exit(0));
         add(btnSair);
