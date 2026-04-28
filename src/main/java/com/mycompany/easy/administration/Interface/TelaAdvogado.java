@@ -1,5 +1,4 @@
 package com.mycompany.easy.administration.Interface;
-
 import controller.Sessao;
 import controller.ContratoController; 
 import com.mycompany.easy.administration.model.Advogado;
@@ -17,18 +16,18 @@ public class TelaAdvogado extends JFrame {
         setLayout(new GridLayout(6, 1, 10, 10));
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
-        // 1. exibir dados básicos
+        // 1. Exibir dados básicos
         add(new JLabel("Bem-vindo, Dr(a). " + a.getNome(), SwingConstants.CENTER));
         add(new JLabel("Especialidade: " + a.getEspecialidade(), SwingConstants.CENTER));
         
-        // 2. botão para contar contratos
+        // 2. Botão para exibir contratos detalhados
         JButton btnContratos = new JButton("Ver Meus Contratos");
-        btnContratos.addActionListener(e -> exibirContagemContratos(a.getId_Advogado()));
+        btnContratos.addActionListener(e -> exibirMeusContratos(a.getId_Advogado()));
         add(btnContratos);
 
         add(new JButton("Minhas Especialidades"));
         
-        // 3. botão Sair com funcionalidade completa
+        // 3. Botão Sair
         JButton btnSair = new JButton("Sair");
         btnSair.addActionListener(e -> System.exit(0)); // Encerra o programa
         add(btnSair);
@@ -37,18 +36,28 @@ public class TelaAdvogado extends JFrame {
         setVisible(true);
     }
 
-    // método que auxilia para busca e mostragem da quantidade de contratos
-    private void exibirContagemContratos(int idAdvogado) {
+    // Método que busca e exibe os contratos detalhados
+    private void exibirMeusContratos(int idAdvogado) {
         ContratoController cc = new ContratoController();
         List<Contrato> todos = cc.listarTodosContratos();
+        
+        StringBuilder sb = new StringBuilder("--- Meus Contratos ---\n\n");
         int contagem = 0;
         
         for (Contrato c : todos) {
             if (c.getId_Advogado() == idAdvogado) {
+                sb.append("Contrato nº: ").append(c.getNumero_Contrato())
+                  .append(" | Valor: R$ ").append(String.format("%.2f", c.getValor_Honorarios()))
+                  .append("\n");
                 contagem++;
             }
         }
         
-        JOptionPane.showMessageDialog(this, "Você possui " + contagem + " contrato(s) sob sua responsabilidade.");
+        if (contagem == 0) {
+            JOptionPane.showMessageDialog(this, "Você não possui contratos sob sua responsabilidade.");
+        } else {
+            sb.append("\nTotal de contratos: ").append(contagem);
+            JOptionPane.showMessageDialog(this, sb.toString());
+        }
     }
 }
