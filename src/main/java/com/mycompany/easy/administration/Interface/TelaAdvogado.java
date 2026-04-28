@@ -16,27 +16,27 @@ public class TelaAdvogado extends JFrame {
         setLayout(new GridLayout(6, 1, 10, 10));
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         
-        // 1. Exibir dados básicos
+        // exibe dados básicos
         add(new JLabel("Bem-vindo, Dr(a). " + a.getNome(), SwingConstants.CENTER));
         add(new JLabel("Especialidade: " + a.getEspecialidade(), SwingConstants.CENTER));
         
-        // 2. Botão para exibir contratos detalhados
+        // botão que exibe os contratos de forma detalhada
         JButton btnContratos = new JButton("Ver Meus Contratos");
         btnContratos.addActionListener(e -> exibirMeusContratos(a.getId_Advogado()));
         add(btnContratos);
 
         add(new JButton("Minhas Especialidades"));
         
-        // 3. Botão Sair
+        // botão de sair
         JButton btnSair = new JButton("Sair");
-        btnSair.addActionListener(e -> System.exit(0)); // Encerra o programa
+        btnSair.addActionListener(e -> System.exit(0)); // encerra o programa
         add(btnSair);
         
         setLocationRelativeTo(null);
         setVisible(true);
     }
 
-    // Método que busca e exibe os contratos detalhados
+    // método que busca e exibe os contratos de forma detalhada
     private void exibirMeusContratos(int idAdvogado) {
         ContratoController cc = new ContratoController();
         List<Contrato> todos = cc.listarTodosContratos();
