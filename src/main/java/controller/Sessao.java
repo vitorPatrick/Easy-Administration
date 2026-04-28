@@ -3,4 +3,5 @@ public class Sessao {
     public static Object usuarioLogado;
 }
 
-// lugar onde é guardada as informações obtidas durante o ciclo do programa
+/*lugar onde é guardada as informações obtidas durante o ciclo do programa 
+e acessadas quaisquer informações dispostas no sistema.*/ 
