@@ -8,22 +8,18 @@ import java.util.List;
 public class SecretariaController {
 
     public void adicionarSecretaria(Secretaria secretaria) {
-        // Validação básica para evitar CPFs duplicados
+        // validação básica para evitar CPF duplicado
         for (Secretaria s : BancoDeDados.secretarias) {
             if (s.getCpf().equals(secretaria.getCpf())) {
                 throw new IllegalArgumentException("Erro: Já existe uma secretária com este CPF.");
             }
         }
-        // Atribui ID e incrementa o contador global
+        // atribui ID e incrementa o contador para que não se repita
         secretaria.setIdSecretaria(BancoDeDados.countSec++);
         BancoDeDados.secretarias.add(secretaria);
     }
-
+    // método de leitura
     public List<Secretaria> listarTodasSecretarias() {
         return new ArrayList<>(BancoDeDados.secretarias);
-    }
-
-    public boolean removerSecretaria(int id) {
-        return BancoDeDados.secretarias.removeIf(s -> s.getIdSecretaria() == id);
     }
 }

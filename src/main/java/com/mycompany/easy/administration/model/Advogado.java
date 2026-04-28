@@ -9,7 +9,7 @@ public class Advogado {
     private String email;
     private String senha;
 
-    // Construtor completo (compatível com a chamada no AppCLI)
+    // método do construtor
     public Advogado(String nome, String especialidade, String oab, String telefone, String email, String senha) {
         this.nome = nome;
         this.especialidade = especialidade;
@@ -19,7 +19,7 @@ public class Advogado {
         this.senha = senha;
     }
 
-    // Getters e Setters
+    // gets e sets
     public int getIdAdvogado() {
         return idAdvogado;
     }

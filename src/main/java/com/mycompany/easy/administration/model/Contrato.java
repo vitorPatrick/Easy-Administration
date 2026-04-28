@@ -7,7 +7,7 @@ public class Contrato {
     private int idAdvogado;
     private double valorHonorarios;
 
-    // Construtor compatível com: new Contrato("001", 1, 1, 1500.00)
+    // método construtor
     public Contrato(String numero, int idCliente, int idAdvogado, double valor) {
         this.numeroContrato = numero;
         this.idCliente = idCliente;
@@ -15,7 +15,7 @@ public class Contrato {
         this.valorHonorarios = valor;
     }
 
-    // Getters e Setters
+    // gets e sets
     public int getIdContrato() { return idContrato; }
     public void setIdContrato(int idContrato) { this.idContrato = idContrato; }
     public String getNumeroContrato() { return numeroContrato; }

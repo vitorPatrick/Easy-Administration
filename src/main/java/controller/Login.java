@@ -1,6 +1,6 @@
 package controller;
 import com.mycompany.easy.administration.model.*;
-
+    // autenticador do sistema
 public class Login {
     public Object autenticar(String email, String senha) {
         for (Advogado a : BancoDeDados.advogados) 
