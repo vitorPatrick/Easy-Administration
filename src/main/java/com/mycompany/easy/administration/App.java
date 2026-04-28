@@ -34,7 +34,7 @@ public class App {
     // autenticador
         Object user = login.autenticar(email, senha);
         if (user != null) {
-    // polimorfismo para chamar sua respectiva classe, se for secretaria vai chamar secretaria e assim por diante. 
+    // nao utilizamos polimorfismo 
             if (user instanceof Secretaria) menuSecretaria();
             else if (user instanceof Advogado) menuAdvogado((Advogado) user);
             else if (user instanceof Cliente) menuCliente((Cliente) user);
