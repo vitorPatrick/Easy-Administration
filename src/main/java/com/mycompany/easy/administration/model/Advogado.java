@@ -1,15 +1,13 @@
 package com.mycompany.easy.administration.model;
 
-public class Advogado {
+import com.mycompany.easy.administration.App;
+
+public class Advogado extends Usuario {
     private int idAdvogado;
-    private String nome;
     private String especialidade;
     private String numeroOAB;
     private String telefone;
-    private String email;
-    private String senha;
 
-    // método do construtor
     public Advogado(String nome, String especialidade, String oab, String telefone, String email, String senha) {
         this.nome = nome;
         this.especialidade = especialidade;
@@ -19,60 +17,19 @@ public class Advogado {
         this.senha = senha;
     }
 
-    // gets e sets
-    public int getIdAdvogado() {
-        return idAdvogado;
+    @Override
+    public void exibirMenu() {
+        // Polimorfismo: Direciona para o menu específico de Advogado
+        App.menuAdvogado(this);
     }
 
-    public void setIdAdvogado(int idAdvogado) {
-        this.idAdvogado = idAdvogado;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getEspecialidade() {
-        return especialidade;
-    }
-
-    public void setEspecialidade(String especialidade) {
-        this.especialidade = especialidade;
-    }
-
-    public String getNumeroOAB() {
-        return numeroOAB;
-    }
-
-    public void setNumeroOAB(String numeroOAB) {
-        this.numeroOAB = numeroOAB;
-    }
-
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
-    }
+    // Getters e Setters específicos
+    public int getIdAdvogado() { return idAdvogado; }
+    public void setIdAdvogado(int idAdvogado) { this.idAdvogado = idAdvogado; }
+    public String getEspecialidade() { return especialidade; }
+    public void setEspecialidade(String especialidade) { this.especialidade = especialidade; }
+    public String getNumeroOAB() { return numeroOAB; }
+    public void setNumeroOAB(String numeroOAB) { this.numeroOAB = numeroOAB; }
+    public String getTelefone() { return telefone; }
+    public void setTelefone(String telefone) { this.telefone = telefone; }
 }
