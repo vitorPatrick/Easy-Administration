@@ -32,18 +32,17 @@ public class App {
         System.out.print("Email: "); String email = sc.nextLine();
         System.out.print("Senha: "); String senha = sc.nextLine();
 
-        // Aplicando Polimorfismo: Tratamos qualquer retorno como Usuario
         Usuario user = login.autenticar(email, senha);
 
         if (user != null) {
-            // O Java executará o exibirMenu() da classe específica (Secretaria, Advogado ou Cliente)
+            //menu da classe especifica identificada
             user.exibirMenu();
         } else {
             System.out.println("Credenciais invalidas!");
         }
     }
 
-    // MENU SECRETARIA
+    // menu da secretaria
     public static void menuSecretaria() {
         while (true) {
             System.out.println("\nMENU SECRETARIA");
@@ -75,23 +74,23 @@ public class App {
                 System.out.println("Cliente cadastrado!");
 
             } else if (op.equals("3")) {
-                System.out.println("\n--- LISTA DE ADVOGADOS ---");
+                System.out.println("\nLISTA DE ADVOGADOS");
                 for (Advogado a : BancoDeDados.advogados) {
                     System.out.println("ID: " + a.getIdAdvogado() + " | Nome: " + a.getNome() + " | OAB: " + a.getNumeroOAB());
                 }
-                System.out.println("\n--- LISTA DE CLIENTES ---");
+                System.out.println("\nLISTA DE CLIENTES");
                 for (Cliente c : BancoDeDados.clientes) {
                     System.out.println("ID: " + c.getIdCliente() + " | Nome: " + c.getNome() + " | Email: " + c.getEmail());
                 }
             } else if (op.equals("4")) {
-                return; // Logout (Volta para o menu inicial do App)
+                return; 
             } else if (op.equals("5")) {
                 System.exit(0);
             }
         }
     }
 
-    // PAINEL DO ADVOGADO
+    // menu do advogado
     public static void menuAdvogado(Advogado adv) {
         while (true) {
             System.out.println("\nPAINEL DO ADVOGADO: " + adv.getNome());
@@ -114,7 +113,7 @@ public class App {
         }
     }
 
-    // PAINEL DO CLIENTE
+    // menu do cliente
     public static void menuCliente(Cliente cli) {
         while (true) {
             System.out.println("\n SEUS DADOS");

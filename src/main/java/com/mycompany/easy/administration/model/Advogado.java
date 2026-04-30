@@ -16,20 +16,23 @@ public class Advogado extends Usuario {
         this.email = email;
         this.senha = senha;
     }
-
+    // sobreescreve o que herda da classe pai (usuario)
     @Override
     public void exibirMenu() {
         // Polimorfismo: Direciona para o menu específico de Advogado
         App.menuAdvogado(this);
     }
 
-    // Getters e Setters específicos
+    // gets e sets
     public int getIdAdvogado() { return idAdvogado; }
     public void setIdAdvogado(int idAdvogado) { this.idAdvogado = idAdvogado; }
+    
     public String getEspecialidade() { return especialidade; }
     public void setEspecialidade(String especialidade) { this.especialidade = especialidade; }
+    
     public String getNumeroOAB() { return numeroOAB; }
     public void setNumeroOAB(String numeroOAB) { this.numeroOAB = numeroOAB; }
+    
     public String getTelefone() { return telefone; }
     public void setTelefone(String telefone) { this.telefone = telefone; }
 }

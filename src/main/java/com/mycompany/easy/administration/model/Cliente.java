@@ -12,16 +12,17 @@ public class Cliente extends Usuario {
         this.email = email;
         this.senha = senha;
     }
-
+    // sobreescreve o que herda da classe pai (usuario)
     @Override
     public void exibirMenu() {
-        // Polimorfismo: Direciona para o menu específico de Cliente
+        
         App.menuCliente(this);
     }
 
-    // Getters e Setters específicos
+    // gets e sets
     public int getIdCliente() { return idCliente; }
     public void setIdCliente(int id) { this.idCliente = id; }
+    
     public String getCpf() { return cpf; }
     public void setCpf(String cpf) { this.cpf = cpf; }
 }
