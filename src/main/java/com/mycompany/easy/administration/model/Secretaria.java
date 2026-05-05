@@ -20,8 +20,16 @@ public class Secretaria extends Usuario {
     }
 
     // Getters e Setters específicos
-    public int getIdSecretaria() { return idSecretaria; }
-    public void setIdSecretaria(int id) { this.idSecretaria = id; }
-    public String getCpf() { return cpf; }
-    public void setCpf(String cpf) { this.cpf = cpf; }
+    public int getIdSecretaria() { 
+        return idSecretaria; 
+    }
+    public void setIdSecretaria(int id) { 
+        this.idSecretaria = id; 
+    }
+    public String getCpf() { 
+        return cpf; 
+    }
+    public void setCpf(String cpf) { 
+        this.cpf = cpf; 
+    }
 }

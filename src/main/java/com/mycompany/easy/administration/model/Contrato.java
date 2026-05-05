@@ -16,10 +16,21 @@ public class Contrato {
     }
 
     // gets e sets
-    public int getIdContrato() { return idContrato; }
-    public void setIdContrato(int idContrato) { this.idContrato = idContrato; }
-    public String getNumeroContrato() { return numeroContrato; }
-    public int getIdCliente() { return idCliente; }
-    public int getIdAdvogado() { return idAdvogado; }
-    public double getValorHonorarios() { return valorHonorarios; }
+    public int getIdContrato() { 
+        return idContrato; 
+    }
+    public void setIdContrato(int idContrato) { 
+        this.idContrato = idContrato; 
+    }
+    public String getNumeroContrato() { 
+        return numeroContrato; 
+    }
+    public int getIdCliente() { 
+        return idCliente; }
+    public int getIdAdvogado() { 
+        return idAdvogado; 
+    }
+    public double getValorHonorarios() { 
+        return valorHonorarios; 
+    }
 }
